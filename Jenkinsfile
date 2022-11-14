@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
+            git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic.git'
 	        echo "Build the app..."
             sh "sudo ./mvnw package"
         }
@@ -36,6 +37,14 @@ pipeline {
       steps {
         script {
           echo "Executing commands..."
+        }
+      }
+
+      stage('Clean workspace') {
+        steps {
+          script {
+            cleanWs()
+          }
         }
       }
     }
