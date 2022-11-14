@@ -39,6 +39,7 @@ pipeline {
           echo "Executing commands..."
         }
       }
+    }
 
       stage('Clean workspace') {
         steps {
