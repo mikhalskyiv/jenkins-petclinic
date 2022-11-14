@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
 	        echo "Build the app..."
-            sh "./mvnw package"
+            sh "sudo ./mvnw package"
         }
       }
     }
