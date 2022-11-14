@@ -9,7 +9,6 @@ pipeline {
     stage('Build') {
       steps {
         script {
-            cleanWs()
 	        echo "Build the app..."
             sh "./mvnw package"
         }
