@@ -41,8 +41,8 @@ pipeline {
         script {
           dir("${env.WORKSPACE}/terraform") {
             sh "pwd"
-            sh "terraform init" 
-            sh "terraform apply -auto-approve"
+            sh "${env.WORKSPACE}/terraform init" 
+            sh "${env.WORKSPACE}/terraform apply -auto-approve"
           }
         }
       }
