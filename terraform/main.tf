@@ -11,10 +11,6 @@ provider "google" {
   # credentials = file("tf-sa-test-cred.json")
 }
 
-data "google_service_account" "petclinic-sa" {
-  account_id = "petclinic-sa"
-}
-
 resource "google_compute_instance" "default" {
   name         = "test-debian-instance"
   machine_type = "e2-micro"
@@ -37,7 +33,7 @@ resource "google_compute_instance" "default" {
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = data.google_service_account.petclinic-sa.email
+    email  = "tf-sa-test@gcp-2022-1-phase2-mikhalskyi.iam.gserviceaccount.com"
     scopes = ["cloud-platform"]
   }
 }
