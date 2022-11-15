@@ -14,7 +14,7 @@ pipeline {
         script {
             git branch: 'main', url: 'https://github.com/mikhalskyiv/jenkins-petclinic.git'
 	          echo "Build the app..."
-            sh "./mvnw package"
+            sh "sudo ./mvnw package"
         }
       }
     }
