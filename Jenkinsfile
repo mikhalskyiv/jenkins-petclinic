@@ -12,8 +12,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-            git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic.git'
-	        echo "Build the app..."
+            git branch: 'main', url: 'https://github.com/mikhalskyiv/jenkins-petclinic.git'
+	          echo "Build the app..."
             sh "sudo ./mvnw package"
         }
       }
@@ -41,8 +41,8 @@ pipeline {
         script {
           dir("${env.WORKSPACE}/terraform") {
             sh "pwd"
-            sh "sudo ${env.WORKSPACE}/terraform terraform init" 
-            sh "sudo ${env.WORKSPACE}/terraform terraform apply -auto-approve"
+            sh "sudo terraform init" 
+            sh "sudo terraform apply -auto-approve"
           }
         }
       }
