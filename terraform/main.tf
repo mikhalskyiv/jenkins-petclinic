@@ -11,7 +11,7 @@ provider "google" {
   # credentials = file("tf-sa-test-cred.json")
 }
 
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "test-debian-instance" {
   name         = "test-debian-instance"
   machine_type = "e2-micro"
   zone         = var.zone
