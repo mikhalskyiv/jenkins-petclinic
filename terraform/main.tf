@@ -23,9 +23,9 @@ resource "google_compute_instance" "default" {
   tags = var.network_tags
 
   boot_disk {
-    size = 10
     initialize_params {
       image = "debian-cloud/debian-10"
+      size = 10
     }
   }
 
