@@ -36,7 +36,7 @@ pipeline {
     stage('Provision prod server') {
       steps {
         script {
-          dir("terraform") {
+          dir("./terraform") {
             sh "terraform init && terraform apply -auto-approve"
           }
         }
