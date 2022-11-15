@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    terraform 'terraform'
+  }
   environment {
         CREDENTIALS_ID ='gcp-2022-1-phase2-Mikhalskyi'
         BUCKET = credentials('GCP_BUCKET_NAME')
